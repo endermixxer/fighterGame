@@ -1,5 +1,4 @@
 import random
-
 """
 One on one fighting game. (Proper British Fight)
 When the game starts:
