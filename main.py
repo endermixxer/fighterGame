@@ -29,7 +29,7 @@ opponent_max_hitstrenghts = 20
 opponent_alive = True
 print("Welcome to Runeverse, a fighting game!")
 
-player_name = input("Please enter a name for your fighter")
+player_name = input("Please enter a name for your fighter ")
 player_total_healthpoints = int(input("please enter the total "
                                "number of hitpoints: "))
 player_min_hitstrenghts = int(input("please enter the "
