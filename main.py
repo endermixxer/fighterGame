@@ -23,19 +23,23 @@ to initiate the opponents attack."
 Note I did not copy your code exactly and have decided to make the characters unique
 and not ones that are tied to an actual game
 """
-opponent_name = "Kalythos"
-opponent_total_healthpoints = 100
-opponent_min_hitstrenghts = 10
-opponent_max_hitstrenghts = 20
-opponent_alive = True
-print("Welcome to Runeverse, a fighting game!")
+# opponent_name = "Kalythos"
+# opponent_total_healthpoints = 100
+# opponent_min_hitstrenghts = 10
+# opponent_max_hitstrenghts = 20
+# opponent_alive = True
 
-player_name = input("Please enter a name for your fighter ")
-player_total_healthpoints = int(input("please enter the total "
+opponent_1 = ["Kalythos", 100, 25, 50, True]
+#opponent_2 = ["Name", HP, MAttack, Maxattack, True]
+#opponent_2 = ["Name", HP, MAttack, Maxattack, True]
+print("Welcome to Runeverse, a fighting game!")
+player = [None, None, None, None, True]
+player[0] = input("Please enter a name for your fighter ")
+player[1] = int(input("please enter the total "
                                "number of hitpoints: "))
-player_min_hitstrenghts = int(input("please enter the "
+player[2] = int(input("please enter the "
                                 "minimum number of hitstrenghts: "))
-player_max_hitstrenghts = int(input("please enter the "
+player[3] = int(input("please enter the "
                                 "maximum number of hitstrenghts: "))
 
 
@@ -45,29 +49,29 @@ player_max_hitstrenghts = int(input("please enter the "
 
 while True:
 
-    player_attack_damage = random.randint(player_min_hitstrenghts,
-                                          player_max_hitstrenghts)
+    player_attack_damage = random.randint(player[2],
+                                          player[3])
 
-    opponent_total_healthpoints = (opponent_total_healthpoints -
+    opponent_1[1] = (opponent_1[1] -
                                 player_attack_damage)
-    input(f"{player_name}, you're up. Please press a and [ENTER] "
-          f"to attack {opponent_name}")
-    if opponent_total_healthpoints <= 0:
+    input(f"{player[0]}, you're up. Please press a and [ENTER] "
+          f"to attack {opponent_1[0]}")
+    if opponent_1[1] <= 0:
         print("You won! Good Game!")
         break
-    print(f"You attacked {opponent_name} with a strength"
+    print(f"You attacked {opponent_1[0]} with a strength"
       f" of {player_attack_damage}.\n"
-      f"and now {opponent_name} has {opponent_total_healthpoints} "
+      f"and now {opponent_1[0]} has {opponent_1[1]} "
       f"hitpoints remaining")
-    opponent_attack_damage = random.randint(opponent_min_hitstrenghts,
-                                            opponent_max_hitstrenghts)
-    player_total_healthpoints = (player_total_healthpoints - opponent_attack_damage)
+    opponent_attack_damage = random.randint(opponent_1[2],
+                                            opponent_1[3])
+    player[1] = (player[1] - opponent_attack_damage)
 
-    input(f"It is {opponent_name}'s turn. Please press a and [ENTER] to see what "
-      f"{opponent_name} does.")
-    print(f"{opponent_name} attacked you with a strength of {opponent_attack_damage},"
-      f" you now have {player_total_healthpoints} hitpoints remaining")
-    if player_total_healthpoints <= 0:
+    input(f"It is {opponent_1[0]}'s turn. Please press a and [ENTER] to see what "
+      f"{opponent_1[0]} does.")
+    print(f"{opponent_1[0]} attacked you with a strength of {opponent_attack_damage},"
+      f" you now have {player[1]} hitpoints remaining")
+    if player[1] <= 0:
         print("You lost, Try Again!")
         break
 
